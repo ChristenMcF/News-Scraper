@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills float-right">
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.petapixel.com" target="_blank">Visit PetaPixel</a>
+              </li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Mongo Web Scraper</h3>
+    </div>
+
+    <div class="jumbotron">
+        <h1 class="jumboheader"><center>PetaPixel Scraper<center></h1>
+        <p class="lead"><center>Keep up to date, and comment on your favorite PetaPixel articles!<center></p>
+        <p><center><a class="btn btn-lg btn-primary" href="/scrape" role="button">Fetch the Latest</a><center></p>
+    </div>
+    
+        {{#each result}}
+    <div class="news-section">
+      <a href="{{this.link}}">
+        <h4 class="card-header">{{this.title}}</h4>
+      </a>
+        <div class="card-block">
+          <a href="{{this.link}}">
+            <p class="card-text">{{this.articleSnippet}}</p>
+          </a>
+          <br>
+          <a href="/articles/{{this._id}}" class="btn btn-primary">Comment</a>
+        </div>
+    </div>
+    <br>
+    <br> {{/each}}
+
+<footer class="footer">
+  <p>&copy; Christen McFarland 2017</p>
+    </footer>
+</div>
